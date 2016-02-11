@@ -10,13 +10,13 @@ define(['lodash'],
         ObjectUtilities.prototype.pickNonFalsy = function(sourceObj) {
             //var self = this;
 
-            return _.pick(sourceObj, _.identity);
+            return  _.pickBy(source, function(x){ return x && !_.isEmpty(x); });
         };
 
         ObjectUtilities.prototype.pickInBoth = function(sourceObj, otherSourceObj) {
             //var self = this;
 
-            return _.pick(sourceObj, function(value, key /*, object*/ ) {
+            return _.pickBy(sourceObj, function(value, key /*, object*/ ) {
                 return _.has(otherSourceObj, key);
             });
         };

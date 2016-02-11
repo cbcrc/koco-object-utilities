@@ -1,6 +1,6 @@
 {
   "name": "koco-object-utilities",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/cbcrc/koco-object-utilities",
   "authors": [
     "fcharest <frederik.charest@radio-canada.ca>"
@@ -23,6 +23,6 @@
     "tests"
   ],
   "dependencies": {
-    "lodash": "^3.7.0"
+    "lodash": "^4.0.1"
   }
 }
