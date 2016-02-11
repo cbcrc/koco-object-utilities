@@ -7,17 +7,17 @@ define(['lodash'],
 
         var ObjectUtilities = function(){};
 
-        ObjectUtilities.prototype.pickNonFalsy = function(sourceObj) {
+        ObjectUtilities.prototype.pickNonFalsy = function(source) {
             //var self = this;
 
             return  _.pickBy(source, function(x){ return x && !_.isEmpty(x); });
         };
 
-        ObjectUtilities.prototype.pickInBoth = function(sourceObj, otherSourceObj) {
+        ObjectUtilities.prototype.pickInBoth = function(source, otherSource) {
             //var self = this;
 
-            return _.pickBy(sourceObj, function(value, key /*, object*/ ) {
-                return _.has(otherSourceObj, key);
+            return _.pickBy(source, function(value, key /*, object*/ ) {
+                return _.has(otherSource, key);
             });
         };
 
