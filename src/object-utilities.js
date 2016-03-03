@@ -8,27 +8,33 @@ define(['lodash'],
         var ObjectUtilities = function(){};
 
         ObjectUtilities.prototype.pickNonFalsy = function(source) {
-            //var self = this;
-
-            return  _.pickBy(source, function(x){ return x && !_.isEmpty(x); });
+            return  _.pickBy(source, function(value) { return !isFalsyOrEmpty(value); });
         };
 
-        ObjectUtilities.prototype.pickInBoth = function(source, otherSource) {
-            //var self = this;
+        function isFalsyOrEmpty(value) {
+            if (!value) {
+                return true;
+            }
 
+            if (_.isObject(value) && _.isEmpty(value)) {
+                return true;
+            }
+
+            return false;
+        }
+
+        ObjectUtilities.prototype.pickInBoth = function(source, otherSource) {
             return _.pickBy(source, function(value, key /*, object*/ ) {
                 return _.has(otherSource, key);
             });
         };
 
         ObjectUtilities.prototype.traverse = function(o, func) {
-            var self = this;
-
             for (var i in o) {
                 func.apply(this, [i, o[i]]);
                 if (o[i] !== null && typeof(o[i]) === 'object') {
                     //going on step down in the object tree!!
-                    self.traverse(o[i], func);
+                    this.traverse(o[i], func);
                 }
             }
         };
