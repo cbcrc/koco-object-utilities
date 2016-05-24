@@ -1,22 +1,22 @@
 {
-    "name": "koco-object-utilities",
-    "version": "0.2.2",
-    "homepage": "https://github.com/cbcrc/koco-object-utilities",
-    "authors": [
-        "fcharest <frederik.charest@radio-canada.ca>"
-    ],
-    "description": "Object utilities to be used in a koco project.",
-    "keywords": [
-        "object",
-        "utilities",
-        "koco"
-    ],
-    "scripts": {
-        "build": "rm -rf dist && mkdir dist && cp -r src/* dist && rm -rf dist/*.js && babel src --out-dir dist --modules umd --presets es2015,stage-0"
-    },
-    "main": "src/object-utilities.js",
-    "license": "MIT",
-    "dependencies": {
-        "lodash": "^4.0.1"
-    }
+  "name": "koco-object-utilities",
+  "version": "1.0.0",
+  "homepage": "https://github.com/cbcrc/koco-object-utilities",
+  "authors": [
+    "fcharest <frederik.charest@radio-canada.ca>"
+  ],
+  "description": "Object utilities to be used in a koco project.",
+  "keywords": [
+    "object",
+    "utilities",
+    "koco"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && cp -r src/* dist && rm -rf dist/*.js && babel src --out-dir dist --modules umd --presets es2015,stage-0"
+  },
+  "main": "src/object-utilities.js",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.0.1"
+  }
 }
